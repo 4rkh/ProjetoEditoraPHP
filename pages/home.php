@@ -3,35 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>PRIME.DB</title>
 </head>
 <body>
-    <h1>Bem vindo ao editor de tabela</h1>
-    <h3>Selecione a tabela a ser editada</h3>
+    <div>
+    <a href="home.php"><img src="images/logo.png" height="150" width="200"></a>
+    </div>
+    <h1>Bem vindo ao PRIME.DB</h1>
+    <h3>Selecione a tabela a ser editada:</h3>
     <label for="Tabelas">Selecione a tabela</label>
     <form method="post" action="">
-        <select name="Tabelas" id="Tabelas">
-            <option name="table1" value="table1">Autores</option>
-            <option name="table2" value="table2">Classificação Autores</option>
-            <option name="table3" value="table3">Autores</option>
-            <option name="table4" value="table4">Autores</option>
-            <option name="table5" value="table5">Autores</option>
-            <option name="table6" value="table6">Autores</option>
+        <select name="Tabelas">
+            <option value="table1">Autores</option>
+            <option value="table2">Classificação Autores</option>
+            <option value="table3">Publicações</option>
+            <option value="table4">Convidados</option>
+            <option value="table5">Divulgações</option>
+            <option value="table6">Tipos Publicação</option>
         </select>
-        <button type="submit">Enviar</button>
+        <input type="submit" value="enviar">
     </form>
     <?php
-        if($_SERVER['REQUEST_METHOD']== 'POST'){
-            $valor = isset($_POST['name']);
-        }
+        error_reporting(E_ALL & ~E_WARNING);
+        $valor = $_POST['Tabelas'];
         
         switch ($valor) {
             case 'table1':
-                header('Location: table2.php');
+                header("Location: table1.php");
+                exit();
+                break;
+            
+            case 'table2':
+                header("Location: table2.php");
+                exit();
+                break;
+            
+            case 'table3':
+                header("Location: table3.php");
+                exit();
+                break;
+            
+            case 'table4':
+                header("Location: table4.php");
+                exit();
+                break;
+            
+            case 'table5':
+                header("Location: table5.php");
+                exit();
+                break;
+            
+            case 'table6':
+                header("Location: table6.php");
+                exit();
                 break;
             
             default:
-                # code...
+
                 break;
         }
     ?>
