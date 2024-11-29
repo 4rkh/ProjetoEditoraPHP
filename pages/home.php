@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>PRIME.DB</title>
 </head>
 <body>
-    <h1>Bem vindo ao editor de tabela</h1>
-    <h3>Selecione a tabela a ser editada</h3>
+    <div>
+    <a href="home.php"><img src="images/logo.png" height="150" width="200"></a>
+    </div>
+    <h1>Bem vindo ao PRIME.DB</h1>
+    <h3>Selecione a tabela a ser editada:</h3>
     <label for="Tabelas">Selecione a tabela</label>
     <form method="post" action="">
         <select name="Tabelas">
