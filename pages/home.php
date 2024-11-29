@@ -13,10 +13,10 @@
         <select name="Tabelas">
             <option value="table1">Autores</option>
             <option value="table2">Classificação Autores</option>
-            <option value="table3">Autores</option>
-            <option value="table4">Autores</option>
-            <option value="table5">Autores</option>
-            <option value="table6">Autores</option>
+            <option value="table3">Publicações</option>
+            <option value="table4">Convidados</option>
+            <option value="table5">Divulgações</option>
+            <option value="table6">Tipos Publicação</option>
         </select>
         <input type="submit" value="enviar">
     </form>
@@ -31,27 +31,27 @@
                 break;
             
             case 'table2':
-                header("Location: table1.php");
+                header("Location: table2.php");
                 exit();
                 break;
             
             case 'table3':
-                header("Location: table1.php");
+                header("Location: table3.php");
                 exit();
                 break;
             
             case 'table4':
-                header("Location: table1.php");
+                header("Location: table4.php");
                 exit();
                 break;
             
             case 'table5':
-                header("Location: table1.php");
+                header("Location: table5.php");
                 exit();
                 break;
             
             case 'table6':
-                header("Location: table1.php");
+                header("Location: table6.php");
                 exit();
                 break;
             
