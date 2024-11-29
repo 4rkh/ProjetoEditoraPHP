@@ -18,16 +18,17 @@
             <option name="table5" value="table5">Autores</option>
             <option name="table6" value="table6">Autores</option>
         </select>
+        <button type="submit">Enviar</button>
     </form>
     <?php
         if($_SERVER['REQUEST_METHOD']== 'POST'){
-            $valor = insset($_POST[]);
+            $valor = isset($_POST['name']);
         }
         
         switch ($valor) {
-            case 'value':
-                # code...
-                break;
+            case 'table1':
+                header('Location: table2.php');
+                exit;
             
             default:
                 # code...
