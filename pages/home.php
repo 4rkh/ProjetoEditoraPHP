@@ -28,7 +28,7 @@
         switch ($valor) {
             case 'table1':
                 header('Location: table2.php');
-                exit;
+                break;
             
             default:
                 # code...
