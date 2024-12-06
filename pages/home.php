@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>
-    <a href="home.php"><img src="images/logo.png" height="150" width="200"></a>
+    <a href="home.php"><img src="../images/logo.png" height="150" width="250"></a>
     </div>
     <h1>Bem vindo ao PRIME.DB</h1>
     <h3>Selecione a tabela a ser editada:</h3>
