@@ -23,6 +23,7 @@
         </select>
         <input type="submit" value="enviar">
     </form>
+    <br>
     <?php
         error_reporting(E_ALL & ~E_WARNING);
         $valor = $_POST['Tabelas'];
@@ -62,6 +63,22 @@
 
                 break;
         }
+
+        $array = [];
+        $contador=0;
+        $se;
+        for ($i = 0; $i<5 ; $i++){
+            $array[] = $contador;
+            $contador++;
+            if ($contador % 2 == 0){
+                $se = true;
+                
+            } else {
+                $se = false;
+            }
+            echo "Contador atual: $contador. <br>Condição: $se. <br>";
+        }
+        print_r($array)
     ?>
 </body>
 </html>
