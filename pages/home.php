@@ -70,7 +70,7 @@
         for ($i = 0; $i<5 ; $i++){
             $array[] = $contador;
             $contador++;
-            if ($contador % 2 == 0){
+            if ($contador % 2 == 0 && $contador/1 == $contador){
                 $se = true;
                 
             } else {

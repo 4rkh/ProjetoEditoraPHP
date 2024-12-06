@@ -13,24 +13,23 @@
     <form method="POST">
         <label for="acao">Escolha a Ação:</label>
             <select id="acao" name="acao" required>
-                <option value="">-- Escolha uma Opção --</option>
                 <option value="inserir">Inserir</option>
                 <option value="atualizar">Atualizar</option>
             </select><br><br>
         <label for="id_autor">ID Autor:</label>
-        <input type="text" id="campo1" name="id_autor" required><br><br>
+        <input type="text" id="campo1" name="campo1" required><br><br>
 
         <label for="nm_autor">Nome do Autor:</label>
-        <input type="text" id="campo2" name="nm_autor" required><br><br>
+        <input type="text" id="campo2" name="campo2" required><br><br>
 
         <label for="cd_cpf_autor3">CPF Autor:</label>
-        <input type="text" id="campo3" name="cd_cpf_autor" required><br><br>
+        <input type="text" id="campo3" name="campo3" required><br><br>
 
         <label for="qt_idade_autor">Idade do Autor:</label>
-        <input type="text" id="campo4" name="qt_idade_autor" required><br><br>
+        <input type="text" id="campo4" name="campo4" required><br><br>
         
         <label for="id_classificacao">ID Classificação:</label>
-        <input type="text" id="campo5" name="id_classificacao" required><br><br>
+        <input type="text" id="campo5" name="campo5" required><br><br>
 
         <button type="submit">Inserir ou Atualizar</button>
     </form>
@@ -56,9 +55,6 @@
 
                 if ($stmt->execute()) {
                     echo "Registro com ID $id foi deletado com sucesso.";
-                    echo "<form method='GET'>
-                            <button type='submit'>Recarregar</button>
-                        </form>";
                 } else {
                     echo "Erro ao deletar o registro.";
                 }
@@ -82,16 +78,16 @@
     }
 
     if ($acao === 'inserir') {
-        $tabela->inserirDados($campo1, $campo2, $campo3, $campo4,$campo5);
+        $autores->inserirDados($campo1, $campo2, $campo3, $campo4, $campo5);
     } elseif ($acao === 'atualizar') {
         if ($id > 0) {
-            $tabela->atualizarDados($id, $campo2, $campo3, $campo4, $campo5);
+            $autores->atualizarDados($campo1, $campo2, $campo3, $campo4, $campo5);
         } else {
             echo "ID inválido para atualização.";
         }
     } elseif ($acao === 'deletar') {
         if ($id > 0) {
-            $tabela->deletarLinha($id);
+            $autores->deletarLinha($id);
         } else {
             echo "ID inválido para deleção.";
         }

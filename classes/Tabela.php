@@ -53,7 +53,7 @@ class Tabela
                 }
                 echo "<td> 
                         <form method='post' action=''>
-                            <input type='hidden' name='action' value='deletar'>
+                            <input type='hidden' name='acao' value='deletar'>
                             <input type='hidden' name='id' value='{$row['id_autor']}'>
                             <button style='background-color:red; color:white; border-radius: 5px;'><strong>X</strong></button>
                         </form> 
@@ -89,6 +89,9 @@ class Tabela
 
             if ($stmt->execute()) {
                 echo "Dados inseridos com sucesso!";
+                echo "<form method='GET'>
+                            <button type='submit'>Recarregar</button>
+                      </form>";
             } else {
                 echo "Erro ao inserir os dados.";
             }
@@ -97,7 +100,7 @@ class Tabela
         }
     }
 
-    public function atualizarDados($id, $campo2, $campo3, $campo4, $campo5) {
+    public function atualizarDados($campo1, $campo2, $campo3, $campo4, $campo5) {
         $host = 'localhost';
         $dbname = 'db editora';
         $username = 'user';
@@ -107,17 +110,20 @@ class Tabela
             $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $query = "UPDATE $this->tableName SET nm_autor = :campo1, cd_cpf_autor = :campo2, qt_idade_autor = :campo3, id_classificacao = :campo4 WHERE id = :id";
+            $query = "UPDATE $this->tableName SET nm_autor = :campo2, cd_cpf_autor = :campo3, qt_idade_autor = :campo4, id_classificacao = :campo5 WHERE id_autor = :campo1";
             $stmt = $pdo->prepare($query);
 
             $stmt->bindParam(':campo1', $campo2);
             $stmt->bindParam(':campo2', $campo3);
             $stmt->bindParam(':campo3', $campo4);
             $stmt->bindParam(':campo4', $campo5);
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':campo1', $$campo1);
 
             if ($stmt->execute()) {
                 echo "Dados atualizados com sucesso!";
+                echo "<form method='GET'>
+                            <button type='submit'>Recarregar</button>
+                      </form>";
             } else {
                 echo "Erro ao atualizar os dados.";
             }
